@@ -1,0 +1,72 @@
+{% load i18n static %}
+<!doctype html>
+<html lang="ja">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'index/css/bootstrap.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'index/css/mystyle.css' %}">
+
+        {% block extra_css %}{% endblock %}
+        <title>パイ投げ</title>
+    </head>
+    <body class="d-flex flex-column h-100">
+        <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info nav-pills">
+            <a class="navbar-brand text-white" href="{%url 'top'%}">Pyeing</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link text-light {% block nav_top %}{% endblock %}" href="{%url 'top'%}">トップ<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link text-light {% block nav_list %}{%endblock%}" href="{%url 'tweet_list'%}">投稿一覧</a>
+                    {% if user.is_authenticated %}
+                        <a class="nav-item nav-link text-light {% block nav_add %}{%endblock%}" href="{%url 'tweet_add'%}">投稿する</a>
+                    {% else %}
+                        <a class="nav-item nav-link text-light {% block nav_in %}{%endblock%}" href="{%url 'login'%}">ログイン</a> 
+                    {% endif %}
+                    <a class="nav-item nav-link text-light {%block nav_help%}{%endblock%}" href="{%url 'help'%}">ヘルプ</a>
+                </div>
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                                  <a href="#" class="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          {{ user.username }}
+                                  </a>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown1">
+                                  <a class="dropdown-item" href="{% url 'profile' %}">プロフィール</a>
+                                  <a class="dropdown-item" href="{% url 'logout' %}">ログアウト</a>
+                              </div>
+                        </li>
+                </ul>
+                {% endif %}
+            </div>
+        </nav>
+        </header>
+
+        <maine role="main" class="flex-shrink-0">
+        <div class="container mb-5">
+            {% block content %}
+              {{ content }}
+            {% endblock %}
+        </div>
+        </maine>
+
+
+        <footer class="footer mt-auto pt-auto bg-light fixed-bottom text-right">
+                <div class="container">
+                    <span class="text-muted"><a class="" href="{% url 'policy' %}">サイトポリシー</a></span>
+                </div>
+        </footer>
+
+        <script src="{% static 'index/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'index/js/bootstrap.min.js' %}"></script>
+        {% block extra_js %}{% endblock %}
+    </body>
+    
+</html>

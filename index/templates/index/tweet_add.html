@@ -1,0 +1,16 @@
+{% extends 'index/base.html' %}
+{%block nav_add%}active{%endblock%}
+
+{% block content %}
+
+<h1 class="mt-3 mb-5">Trowing the Pye!!</h1>
+
+<form action="{% url 'tweet_add' %}" method="post" novalidate class="pt-5">
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">投稿内容</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="content"></textarea>
+    </div>
+        <input type="submit" class="rounded-pill btn-primary btn-lg">
+</form>
+{% endblock %}

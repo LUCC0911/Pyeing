@@ -1,0 +1,14 @@
+.jumbotron .jumbotron-fluid{
+    background-image: url("");
+    background-size: cover;
+    background-position: center 60%;
+  }
+
+  main > .container {
+    padding: 60px 15px 0;
+  }
+
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }

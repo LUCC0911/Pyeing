@@ -1,0 +1,65 @@
+{% extends "index/base.html" %}
+{%block nav_help%}active{%endblock%}
+
+{% block content %}
+<h1 class="mb-5 mt-3">FAQ</h1>
+
+<div class="accordion pt-5" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card">
+          <div class="card-header" role="tab" id="headingOne">
+            <h5 class="mb-0">
+              <a class="text-body" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+                このサイトってどんなサイト？
+              </a>
+            </h5>
+          </div><!-- /.card-header -->
+          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              このサイトはPythonで作られた投稿サイトです。それ以上でもそれ以下でもありません。
+            </div><!-- /.card-body -->
+          </div><!-- /.collapse -->
+        </div><!-- /.card -->
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed text-body" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                サイトの使い方が分からん。
+              </a>
+            </h5>
+          </div><!-- /.card-header -->
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              初めての方はまずアカウントを作成しログインしてください。ログインすると投稿するためのページにアクセスできるようになります。
+            </div><!-- /.card-body -->
+          </div><!-- /.collapse -->
+        </div><!-- /.card -->
+        <div class="card">
+          <div class="card-header" role="tab" id="headingThree">
+            <h5 class="mb-0">
+              <a class="collapsed text-body" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                サイトのデザイン手抜き過ぎ。
+              </a>
+            </h5>
+          </div><!-- /.card-header -->
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              シンプル　イズ　ベスト
+            </div><!-- /.card-body -->
+          </div><!-- /.collapse -->
+        </div><!-- /.card -->
+        <div class="card">
+                <div class="card-header" role="tab" id="headingFour">
+                  <h5 class="mb-0">
+                    <a class="collapsed text-body" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseThree">
+                      エラー、バグを見つけたよ。
+                    </a>
+                  </h5>
+                </div><!-- /.card-header -->
+                <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body">
+                    見なかったことにして下さい。
+                  </div><!-- /.card-body -->
+                </div><!-- /.collapse -->
+              </div><!-- /.card -->
+      </div><!-- /#accordion -->
+{% endblock content %}

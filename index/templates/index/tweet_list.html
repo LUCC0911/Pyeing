@@ -1,0 +1,22 @@
+{% extends "index/base.html" %}
+{%block nav_list%}active{%endblock%}
+
+{% block content %}
+<h1 class="mt-3">Post list</h1>
+<div class="mt-5">
+{% for tweet in tweets %}
+<div class="media border-primary rounded shadow my-3">
+        <a href="#" class="mr-3">
+          <img src="..." alt="メディアの画像">
+        </a>
+        <div class="media-body my-1">
+          <h5 class="mt-0 text-primary">{{ tweet.user }}</h5>
+          {{ tweet.content }}
+        </div>
+        <small class="tmedia-body ext-light">{{ tweet.update_date }}</small>
+</div>
+      
+{% endfor %}
+</div>
+
+{% endblock content %}
