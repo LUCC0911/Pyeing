@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
+from index import views as index_views
 
 
 urlpatterns = [
+    path('', index_views.top, name='Top'),
     path('signup/', accounts_views.signup, name='signup'),
     path('index/', include('index.urls')),
     path('admin/', admin.site.urls),
