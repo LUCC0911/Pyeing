@@ -137,8 +137,8 @@ LOGIN_REDIRECT_URL = 'tweet_list'
 LOGOUT_REDIRECT_URL = 'top'
 LOGIN_URL = 'login'
 
+ALLOWED_HOSTS = ['git.heroku.com/pyeing.git']
+
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
-
-ALLOWED_HOSTS = ['git.heroku.com/pyeing.git']
